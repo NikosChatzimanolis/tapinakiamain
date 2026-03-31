@@ -111,7 +111,7 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-3xl px-6 text-center">
           <AnimatedSection>
             <p className="font-display italic text-2xl md:text-3xl text-espresso mb-4">
-              Follow our table on Instagram.
+              Follow us on Instagram.
             </p>
             <a
               href={RESTAURANT.instagram}
