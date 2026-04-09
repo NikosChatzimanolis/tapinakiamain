@@ -8,16 +8,16 @@ import { IMAGES } from '@/lib/placeholder-images'
 
 const DISH_NAMES = [
   'Kolokithokeftedes — Courgette Fritters',
-  'Veal Cheeks Orzo',
-  'Lemon Pork',
-  'Grilled Shrimp with Fresh Herbs',
+  'Keftedakia — Meatballs in Tomato Sauce',
+  'Tigania Kotopoulo — Chicken with Peppers',
+  'Manitaria — Sautéed Mushrooms',
   'Meat Meze',
-  'Warm Homemade Bread + Dips',
+  'Homemade Dips',
 ]
 
 const DISH_CATEGORIES = [
   'Small Plates',
-  'Signatures',
+  'Small Plates',
   'Signatures',
   'Small Plates',
   'Meze',
@@ -82,25 +82,27 @@ export function FoodShowcase() {
       <div className="mx-auto max-w-7xl px-6">
         {/* Row 1 */}
         <AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <DishImage
-              image={dishes[0]}
-              name={DISH_NAMES[0]}
-              category={DISH_CATEGORIES[0]}
-              className="md:col-span-2 aspect-[4/3]"
-            />
-            <div className="flex flex-col gap-3">
+          <div className="flex flex-col md:flex-row gap-3">
+            <div className="md:w-2/3">
+              <DishImage
+                image={dishes[0]}
+                name={DISH_NAMES[0]}
+                category={DISH_CATEGORIES[0]}
+                className="aspect-[4/3] h-full"
+              />
+            </div>
+            <div className="md:w-1/3 flex flex-col gap-3">
               <DishImage
                 image={dishes[1]}
                 name={DISH_NAMES[1]}
                 category={DISH_CATEGORIES[1]}
-                className="aspect-[3/4] flex-1"
+                className="aspect-square flex-1"
               />
               <DishImage
                 image={dishes[2]}
                 name={DISH_NAMES[2]}
                 category={DISH_CATEGORIES[2]}
-                className="aspect-[3/4] flex-1"
+                className="aspect-square flex-1"
               />
             </div>
           </div>

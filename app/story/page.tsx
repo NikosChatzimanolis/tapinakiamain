@@ -37,15 +37,14 @@ export default function StoryPage() {
             </div>
             <div className="md:w-1/2">
               <AnimatedSection delay={0.15}>
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <Image
-                    src={IMAGES.storyHero.src}
-                    alt={IMAGES.storyHero.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+                <Image
+                  src={IMAGES.storyHero.src}
+                  alt={IMAGES.storyHero.alt}
+                  width={IMAGES.storyHero.width}
+                  height={IMAGES.storyHero.height}
+                  className="w-full h-auto"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </AnimatedSection>
             </div>
           </div>

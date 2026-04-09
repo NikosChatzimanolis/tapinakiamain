@@ -8,25 +8,24 @@ import { IMAGES } from '@/lib/placeholder-images'
 import { RESTAURANT } from '@/lib/restaurant-info'
 
 const CAPTIONS = [
-  'Grilled Halloumi',
-  'Loukoumades',
-  'Veal Cheeks Orzo',
-  'Greek Salad',
+  'Gyros Merida',
+  'Shrimp Salad',
+  'Bread & Dips',
   'The Interior',
-  'The Fireplace',
-  'Table Details',
-  'The Blue Doors',
-  'Zivania',
-  'Bread & Oil',
-  'Live Music',
-  'The Terrace View',
+  'Sunset Over Paphos',
+  'Vintage Details',
+  'The Staircase',
+  'Terrace Nights',
+  'The Terrace Table',
+  'A Full Evening',
+  'Our Spirits',
+  'Sunset View',
 ]
 
 const LABELS: Record<number, string> = {
   0: 'Food',
-  4: 'Atmosphere',
-  8: 'The Terrace',
-  10: 'Live Music',
+  3: 'The Space',
+  6: 'Atmosphere',
 }
 
 function GalleryImage({ image, caption, index }: {

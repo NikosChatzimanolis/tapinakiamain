@@ -28,8 +28,6 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/50 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 h-full mx-auto max-w-7xl px-6 flex flex-col justify-end pb-16 md:pb-20">

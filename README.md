@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ta Pinakia
 
-## Getting Started
+Website for Ta Pinakia — a meze restaurant at Kennedy Square, Nicosia. Designed for sharing plates, live music, and reservations by phone or WhatsApp.
 
-First, run the development server:
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home — hero, intro, food showcase, experience, social proof, reservation CTA |
+| `/menu` | Full menu with sticky category nav and scroll-spy |
+| `/story` | Restaurant story |
+| `/gallery` | Photo gallery |
+| `/find-us` | Address, hours, contact info, embedded Google Map |
+
+## Stack
+
+| | |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Styling | Tailwind CSS 4 |
+| Animation | Framer Motion 12 |
+| Language | TypeScript |
+
+## Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # Development server
+npm run build    # Production build
+npm run start    # Serve production build
+npm run lint     # ESLint
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  page.tsx              Home
+  layout.tsx            Root layout
+  menu/                 Menu page with sticky category nav
+  story/                Restaurant story
+  gallery/              Photo gallery
+  find-us/              Location, hours, contact, Google Maps
+components/
+  layout/               Navbar, Footer, WhatsAppButton
+  home/                 Hero, IntroSection, FoodShowcase, ExperienceSection,
+                        SocialProof, ReservationCTA
+  menu/                 MenuItem, MenuCategory
+  ui/                   SectionLabel, Divider, AnimatedSection
+lib/
+  menu-data             Menu categories and items
+  restaurant-info       RESTAURANT constant — address, phone, WhatsApp, socials, hours
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Restaurant info
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Location:** Kennedy Square, First Floor, Nicosia
+- **Hours:** Monday–Sunday · Lunch from 12:00 · Dinner until 23:00
+- **Reservations:** Phone & WhatsApp only
+- **Live music:** Every Wednesday & Sunday evening
