@@ -8,7 +8,7 @@ export function Footer() {
         {/* Wordmark */}
         <div className="text-center pt-20 pb-12">
           <p className="font-display italic text-4xl md:text-5xl text-text-warm tracking-wide">
-            {RESTAURANT.nameGr}
+            {RESTAURANT.name}
           </p>
           <p className="font-body text-sm text-text-muted mt-3 tracking-wide">
             Small Plates. Ancient Tradition.

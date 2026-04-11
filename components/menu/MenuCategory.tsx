@@ -2,10 +2,10 @@
 
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { MenuItem } from '@/components/menu/MenuItem'
-import type { MenuCategory as MenuCategoryType } from '@/lib/menu-data'
+import type { MezeMenu } from '@/lib/menu-data'
 
 interface Props {
-  category: MenuCategoryType
+  category: MezeMenu
   dark?: boolean
 }
 
@@ -17,20 +17,31 @@ export function MenuCategory({ category, dark = false }: Props) {
     >
       <div className="mx-auto max-w-3xl px-6">
         <AnimatedSection>
-          <h2 className={`font-display italic text-3xl md:text-4xl mb-2 ${dark ? 'text-text-warm' : 'text-espresso'}`}>
-            {category.label}
-          </h2>
-          {category.description && (
-            <p className={`font-body text-sm font-light mb-10 ${dark ? 'text-text-muted' : 'text-text-dim'}`}>
-              {category.description}
-            </p>
-          )}
-          {!category.description && <div className="mb-10" />}
+          {/* Meze header */}
+          <div className="mb-10">
+            <div className="flex items-baseline gap-3 flex-wrap">
+              <h2 className={`font-display italic text-3xl md:text-4xl ${dark ? 'text-text-warm' : 'text-espresso'}`}>
+                {category.label}
+              </h2>
+              <span className={`font-display italic text-lg ${dark ? 'text-text-muted' : 'text-text-dim'}`}>
+                {category.labelGr}
+              </span>
+            </div>
+            <div className={`flex items-center gap-3 mt-3 font-body text-sm ${dark ? 'text-text-muted' : 'text-text-dim'}`}>
+              <span className="text-amber font-medium text-lg">
+                &euro;{category.price.toFixed(2)}
+              </span>
+              <span>per person</span>
+              <span className={`${dark ? 'text-white/20' : 'text-black/20'}`}>·</span>
+              <span>Minimum {category.minPersons} persons</span>
+            </div>
+          </div>
         </AnimatedSection>
 
+        {/* Dish list */}
         <div className="flex flex-col">
           {category.items.map((item, i) => (
-            <AnimatedSection key={item.id} delay={i * 0.05}>
+            <AnimatedSection key={item.id} delay={i * 0.04}>
               <MenuItem item={item} dark={dark} />
             </AnimatedSection>
           ))}

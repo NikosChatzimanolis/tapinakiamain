@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { MENU } from '@/lib/menu-data'
+import { MENU, ALLERGEN_KEY } from '@/lib/menu-data'
 import { MenuCategory } from '@/components/menu/MenuCategory'
 import { ReservationCTA } from '@/components/home/ReservationCTA'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
@@ -49,7 +49,9 @@ export default function MenuPage() {
               at the table.
             </h1>
             <p className="mt-6 font-body font-light text-text-dim leading-relaxed">
-              All dishes are designed to share. Meze portions serve 2–4.
+              Our menu is created so that the portion quantities are enough for one person.
+              <br />
+              All meze are designed to share — minimum 2 persons.
             </p>
             <Link
               href="/find-us"
@@ -81,7 +83,6 @@ export default function MenuPage() {
               ))}
             </div>
           </div>
-          {/* Fade hint on right edge */}
           <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-parchment to-transparent pointer-events-none md:hidden" />
         </div>
       </nav>
@@ -94,6 +95,25 @@ export default function MenuPage() {
           dark={i % 2 === 1}
         />
       ))}
+
+      {/* Allergen Legend */}
+      <section className="bg-parchment py-12 md:py-16 border-t border-black/8">
+        <div className="mx-auto max-w-3xl px-6">
+          <AnimatedSection>
+            <h3 className="font-body tracking-[0.2em] text-[11px] uppercase text-text-muted mb-4">
+              Allergen Information
+            </h3>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {ALLERGEN_KEY.map((a) => (
+                <span key={a.id} className="font-body text-xs text-text-dim">
+                  <span className="text-amber font-medium">{a.id}</span>{' '}
+                  {a.en}
+                </span>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
 
       <ReservationCTA />
     </motion.div>

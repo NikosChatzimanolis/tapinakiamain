@@ -54,7 +54,7 @@ export function Navbar() {
           <Link href="/" className={`font-display italic text-xl tracking-wide transition-colors duration-500 ${
             showDarkNav && !scrolled ? 'text-espresso' : 'text-text-warm'
           }`}>
-            {RESTAURANT.nameGr}
+            {RESTAURANT.name}
           </Link>
 
           {/* Desktop nav */}
