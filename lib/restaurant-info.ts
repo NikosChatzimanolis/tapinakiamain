@@ -14,7 +14,7 @@ export const RESTAURANT = {
   },
   phone: '+35726818818',
   phoneDisplay: '+357 26 818818',
-  whatsapp: 'https://wa.me/35726818818',
+  whatsapp: 'https://wa.me/35797966050',
   instagram: 'https://www.instagram.com/tapinakia/',
   facebook: 'https://www.facebook.com/tapinakia/',
   hours: 'Mon–Sun 12:00–23:00',
