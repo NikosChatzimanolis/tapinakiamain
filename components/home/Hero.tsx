@@ -1,23 +1,14 @@
 'use client'
 
 import Image from 'next/image'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { IMAGES } from '@/lib/placeholder-images'
 import { RESTAURANT } from '@/lib/restaurant-info'
 
 export function Hero() {
-  const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  })
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, 150])
-
   return (
-    <section ref={ref} className="relative h-dvh w-full overflow-hidden">
-      {/* Background image with parallax */}
-      <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[150px] -bottom-[150px]">
+    <section className="relative h-dvh w-full overflow-hidden">
+      <div className="absolute inset-0">
         <Image
           src={IMAGES.hero.src}
           alt={IMAGES.hero.alt}
@@ -26,7 +17,7 @@ export function Hero() {
           className="object-cover"
           sizes="100vw"
         />
-      </motion.div>
+      </div>
 
       <div className="absolute inset-0 z-[1] bg-espresso/25" aria-hidden />
 

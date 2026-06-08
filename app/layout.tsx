@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   title: 'Ta Pinakia — Mezedopoleio · Paphos, Cyprus',
   description: 'Traditional Greek meze dining in the heart of Paphos Old Town. Small plates, shared tradition. Reservations recommended: +357 26 818818',
   keywords: ['Ta Pinakia', 'Paphos restaurant', 'Greek meze', 'mezedopoleio Paphos', 'Kennedy Square dining', 'Cyprus traditional food'],
+  icons: {
+    icon: [{ url: '/icon.png', type: 'image/png' }],
+    apple: [{ url: '/apple-icon.png', type: 'image/png' }],
+  },
   openGraph: {
     title: 'Ta Pinakia — Mezedopoleio · Paphos',
     description: 'Small plates. Big tradition. Traditional Greek dining in Paphos Old Town.',
@@ -37,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-body">
+    <html lang="en" className={`${display.variable} ${body.variable} relative h-full antialiased`}>
+      <body className="relative min-h-full flex flex-col font-body">
         <Navbar />
         <main className="relative flex-1">{children}</main>
         <Footer />

@@ -32,10 +32,10 @@ async function convertFile(filename) {
   const maxSize = LARGE_FILES.has(name) ? LARGE_MAX : DEFAULT_MAX
 
   const beforeSize = (await stat(inputPath)).size
-  const image = sharp(inputPath)
-  const metadata = await image.metadata()
+  const oriented = await sharp(inputPath).rotate().toBuffer()
+  const metadata = await sharp(oriented).metadata()
 
-  await image
+  await sharp(oriented)
     .resize({
       width: metadata.width >= metadata.height ? maxSize : undefined,
       height: metadata.height > metadata.width ? maxSize : undefined,
