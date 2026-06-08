@@ -7,7 +7,7 @@ import { IMAGES } from '@/lib/placeholder-images'
 import { RESTAURANT } from '@/lib/restaurant-info'
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -15,7 +15,7 @@ export function Hero() {
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 150])
 
   return (
-    <section ref={ref} className="relative h-[100dvh] w-full overflow-hidden">
+    <section ref={ref} className="relative h-dvh w-full overflow-hidden">
       {/* Background image with parallax */}
       <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[150px] -bottom-[150px]">
         <Image
@@ -30,18 +30,18 @@ export function Hero() {
 
       <div className="absolute inset-0 z-[1] bg-espresso/25" aria-hidden />
 
-      {/* Content */}
-      <div className="relative z-10 h-full mx-auto max-w-7xl px-6 flex flex-col items-center justify-center text-center">
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="font-body tracking-[0.3em] text-[11px] uppercase text-text-warm/70 mb-8"
-        >
-          Paphos · Kennedy Square
-        </motion.span>
+      {/* Content pinned to bottom */}
+      <div className="absolute inset-x-0 bottom-4 md:bottom-5 z-10 px-6">
+        <div className="mx-auto max-w-7xl flex flex-col items-center gap-5 text-center">
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="font-body tracking-[0.3em] text-[11px] uppercase text-text-warm/70"
+          >
+            Paphos · Kennedy Square
+          </motion.span>
 
-        <div className="flex flex-col items-center gap-10">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -64,20 +64,6 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ scaleY: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-px h-8 bg-text-warm/40 origin-top"
-          />
-        </motion.div>
       </div>
     </section>
   )

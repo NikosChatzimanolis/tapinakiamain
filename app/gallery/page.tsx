@@ -1,47 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { IMAGES } from '@/lib/placeholder-images'
 import { RESTAURANT } from '@/lib/restaurant-info'
-
-const CAPTIONS = [
-  'Gyros Merida',
-  'Shrimp Salad',
-  'Bread & Dips',
-  'The Interior',
-  'Sunset Over Paphos',
-  'Vintage Details',
-  'The Staircase',
-  'Terrace Nights',
-  'The Terrace Table',
-  'A Full Evening',
-  'Our Spirits',
-  'Sunset View',
-  'Seasonal Dessert',
-  'House Dessert',
-  'Chocolate & Berry',
-  'Kataifi',
-  'Courgette Chips',
-  'Roasted Chicken',
-  'Stuffed Eggplant',
-  'Orzo in the Pan',
-  'Pasta & Chicken',
-  'Calamari Salad',
-  'Full Meze Spread',
-  'Table Spread',
-  'The Dining Room',
-  'Blue Table Setting',
-  'Live Music Wall',
-  'Vintage Corner',
-  'Greek Wall Plates',
-  'Wall Character',
-  'Set for Dinner',
-  'The Terrace',
-  'Summer Afternoon',
-]
 
 const LABELS: Record<number, string> = {
   0: 'Food',
@@ -53,20 +16,12 @@ const LABELS: Record<number, string> = {
   31: 'Atmosphere',
 }
 
-function GalleryImage({ image, caption, index }: {
+function GalleryImage({ image, index }: {
   image: (typeof IMAGES.gallery)[number]
-  caption: string
   index: number
 }) {
-  const [shown, setShown] = useState(false)
-
   return (
-    <div
-      className="break-inside-avoid mb-3 relative overflow-hidden group cursor-pointer"
-      onMouseEnter={() => setShown(true)}
-      onMouseLeave={() => setShown(false)}
-      onClick={() => setShown((prev) => !prev)}
-    >
+    <div className="break-inside-avoid mb-3 relative overflow-hidden group">
       <AnimatedSection delay={index * 0.05}>
         <Image
           src={image.src}
@@ -76,19 +31,6 @@ function GalleryImage({ image, caption, index }: {
           className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           sizes="(max-width: 768px) 50vw, 33vw"
         />
-        <AnimatePresence>
-          {shown && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="absolute inset-0 bg-espresso/60 flex items-end p-4"
-            >
-              <p className="font-display text-lg text-text-warm">{caption}</p>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </AnimatedSection>
     </div>
   )
@@ -123,7 +65,7 @@ export default function GalleryPage() {
                     {LABELS[i]}
                   </p>
                 )}
-                <GalleryImage image={image} caption={CAPTIONS[i]} index={i} />
+                <GalleryImage image={image} index={i} />
               </div>
             ))}
           </div>
