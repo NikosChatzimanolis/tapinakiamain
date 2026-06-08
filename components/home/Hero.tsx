@@ -28,51 +28,25 @@ export function Hero() {
         />
       </motion.div>
 
+      <div className="absolute inset-0 z-[1] bg-espresso/25" aria-hidden />
 
       {/* Content */}
-      <div className="relative z-10 h-full mx-auto max-w-7xl px-6 flex flex-col justify-end pb-16 md:pb-20">
-        {/* Top left label */}
-        <motion.div
+      <div className="relative z-10 h-full mx-auto max-w-7xl px-6 flex flex-col items-center justify-center text-center">
+        <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="absolute top-24 left-6"
+          className="font-body tracking-[0.3em] text-[11px] uppercase text-text-warm/70 mb-8"
         >
-          <span className="font-body tracking-[0.3em] text-[11px] uppercase text-text-warm/60">
-            Paphos · Kennedy Square
-          </span>
-        </motion.div>
+          Paphos · Kennedy Square
+        </motion.span>
 
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
-          {/* Left - heading and body */}
-          <div>
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-[clamp(52px,8vw,120px)] leading-[0.95] tracking-tight text-text-warm"
-            >
-              Small Plates.<br />
-              Big <em className="italic">Stories.</em><br />
-              Ancient <em className="italic">Tradition.</em>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-6 font-body font-light text-base md:text-lg text-text-warm/80 max-w-md leading-relaxed"
-            >
-              A mezedopoleio in the heart of Paphos Old Town.<br />
-              Meze-style dining as it was always meant to be — shared.
-            </motion.p>
-          </div>
-
-          {/* Right - reservation block */}
+        <div className="flex flex-col items-center gap-10">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="flex flex-col gap-3"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3"
           >
             <a
               href={`tel:${RESTAURANT.phone}`}

@@ -20,12 +20,37 @@ const CAPTIONS = [
   'A Full Evening',
   'Our Spirits',
   'Sunset View',
+  'Seasonal Dessert',
+  'House Dessert',
+  'Chocolate & Berry',
+  'Kataifi',
+  'Courgette Chips',
+  'Roasted Chicken',
+  'Stuffed Eggplant',
+  'Orzo in the Pan',
+  'Pasta & Chicken',
+  'Calamari Salad',
+  'Full Meze Spread',
+  'Table Spread',
+  'The Dining Room',
+  'Blue Table Setting',
+  'Live Music Wall',
+  'Vintage Corner',
+  'Greek Wall Plates',
+  'Wall Character',
+  'Set for Dinner',
+  'The Terrace',
+  'Summer Afternoon',
 ]
 
 const LABELS: Record<number, string> = {
   0: 'Food',
   3: 'The Space',
   6: 'Atmosphere',
+  12: 'Desserts',
+  16: 'From the Kitchen',
+  24: 'The Space',
+  31: 'Atmosphere',
 }
 
 function GalleryImage({ image, caption, index }: {

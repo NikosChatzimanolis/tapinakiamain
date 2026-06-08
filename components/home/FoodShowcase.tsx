@@ -7,19 +7,19 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { IMAGES } from '@/lib/placeholder-images'
 
 const DISH_NAMES = [
-  'Kolokithokeftedes — Courgette Fritters',
-  'Keftedakia — Meatballs in Tomato Sauce',
-  'Tigania Kotopoulo — Chicken with Peppers',
-  'Manitaria — Sautéed Mushrooms',
-  'Meat Meze',
-  'Homemade Dips',
+  'Courgette Chips',
+  'Sausage & Potato Stew',
+  'Roasted Chicken',
+  'Table Spread',
+  'Full Meze Spread',
+  'Stuffed Eggplant',
 ]
 
 const DISH_CATEGORIES = [
   'Small Plates',
   'Small Plates',
   'Signatures',
-  'Small Plates',
+  'Meze',
   'Meze',
   'Small Plates',
 ]
